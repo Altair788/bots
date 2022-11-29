@@ -1,3 +1,18 @@
+#    в Bash консоль: pip install --user pytelegrambotapi
+#    если проблемы с кодировкой в начало строки добавить: # - *- coding: utf- 8 - *-
+#    и:import sys
+#    reload(sys)
+#    sys.setdefaultencoding('utf-8')
+#     хак  bot.polling(none_stop=True)
+
+# - *- coding: utf- 8 - *-
+import token_bot
+import telebot
+from telebot import types
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+bot = telebot.TeleBot(token_bot.token)
 from random import randrange
 
 print('Привет! Меня зовут Рич, Маус Рич. Приглашаю тебя на экономическую игру "Денежный поток 101"')
@@ -15,3 +30,4 @@ for i in range(1):
         print("Отправь фото с ценой билета орнанизатору мероприятия и ожидай анонса ближайшей игры :)")
     elif answer.lower() == 'нет':
         print('Возвращайся когда передумаешь :)')
+bot.polling(none_stop=True)
